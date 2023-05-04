@@ -1,0 +1,68 @@
+<!--dlt-->
+
+<!--tags-->
+
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+
+<!--recall variables of context json-->
+
+<h1>{{name}}</h1>
+<h1>{{age}}</h1>
+
+<!--filters-->
+
+<h1>{{name|capfirst}}</h1> <!--captlize-->
+
+<h1>{{name|default:'not found'}}</h1> <!--default-->
+
+<h1>{{name|slice:'5:10'}}</h1> <!--range-->
+
+<h1>{{name|length}}</h1> <!--length-->
+
+<h1>{{name|add:' nigga'}}</h1> <!--push-->
+
+<h1>{{name|cut:'a'}}</h1> <!--remove-->
+
+<h1>{{age|filesizeformat}}</h1> <!--convert to bytes-->
+
+{% if age == 25 %} <!--if condition-->
+<h1>age is 25</h1>
+
+{% elif age == 20 %}
+<h1>age is 20</h1>
+
+{% else %}
+<h1>damn nigga</h1>
+
+{% endif %}
+
+
+{% for x in name %} <!--for condition-->
+
+<h1>{{x}}</h1>
+
+{% endfor %}
+
+
+{% comment  %}
+
+this should not appear
+
+{% endcomment %}
+
+
+{% for x in cars %} 
+
+<h1>{{x.name}}</h1>
+<h1>{{x.price}}</h1>
+<hr/>
+
+{% endfor %}
+
+
+
+{% endblock content %}
+
+
